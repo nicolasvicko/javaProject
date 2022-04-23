@@ -13,10 +13,10 @@ public class PrimeiraClasseJava {
 		String idade = JOptionPane.showInputDialog("Qual a idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro geral?");
-		String cpf = JOptionPane.showInputDialog("Qual È o CPF?");
-		String mae = JOptionPane.showInputDialog("Nome da m„e:");
+		String cpf = JOptionPane.showInputDialog("Qual √© o CPF?");
+		String mae = JOptionPane.showInputDialog("Nome da m√£e:");
 		String pai = JOptionPane.showInputDialog("Nome do Pai:");
-		String matricula = JOptionPane.showInputDialog("Data da MatrÌcula:");
+		String matricula = JOptionPane.showInputDialog("Data da Matr√≠cula:");
 		String serie = JOptionPane.showInputDialog("Qual a serie?");
 		String escola = JOptionPane.showInputDialog("Nome da escola:");
 
@@ -47,12 +47,18 @@ public class PrimeiraClasseJava {
 		
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
 		if (escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1,2,3 ou 4?");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue());
+
+			int continuarRemover = 0;
+
+			while(continuarRemover==0){
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1,2,3 ou 4?");
+				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue());
+			}
+
 		}
 
 		System.out.println(aluno1.toString());
-		System.out.println("MÈdia da nota È = " + aluno1.getMediaNota());
+		System.out.println("M√©dia da nota √© = " + aluno1.getMediaNota());
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 
 		/* Equals e Hashcode(diferenciar objetos) */
